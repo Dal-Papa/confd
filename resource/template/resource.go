@@ -134,7 +134,7 @@ func (t *TemplateResource) setVars() error {
 func (t *TemplateResource) createStageFile() error {
 	log.Debug("Using source template " + t.Src)
 
-	if !isFileExist(t.Src) {
+	if !strings.Contains(t.Src, "*") && !isFileExist(t.Src) {
 		return errors.New("Missing template: " + t.Src)
 	}
 
