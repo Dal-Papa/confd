@@ -10,7 +10,7 @@ import (
 	"time"
 
 	"fmt"
-	"github.com/bacongobbler/confd/log"
+	"github.com/Dal-Papa/confd/log"
 )
 
 type Client struct {

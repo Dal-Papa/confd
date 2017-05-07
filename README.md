@@ -21,8 +21,8 @@ Go 1.6 is required to build confd, which uses the new vendor directory.
 
 ```
 $ mkdir -p $GOPATH/src/github.com/bacongobbler
-$ git clone https://github.com/bacongobbler/confd.git $GOPATH/src/github.com/bacongobbler/confd
-$ cd $GOPATH/src/github.com/bacongobbler/confd
+$ git clone https://github.com/Dal-Papa/confd.git $GOPATH/src/github.com/Dal-Papa/confd
+$ cd $GOPATH/src/github.com/Dal-Papa/confd
 $ ./build
 ```
 

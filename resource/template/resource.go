@@ -14,8 +14,8 @@ import (
 	"text/template"
 
 	"github.com/BurntSushi/toml"
-	"github.com/bacongobbler/confd/backends"
-	"github.com/bacongobbler/confd/log"
+	"github.com/Dal-Papa/confd/backends"
+	"github.com/Dal-Papa/confd/log"
 	"github.com/kelseyhightower/memkv"
 )
 
@@ -140,7 +140,13 @@ func (t *TemplateResource) createStageFile() error {
 
 	log.Debug("Compiling source template " + t.Src)
 
-	tmpl, err := template.New(filepath.Base(t.Src)).Funcs(t.funcMap).ParseFiles(t.Src)
+	var err error
+	tmpl := template.New(filepath.Base(t.Src)).Funcs(t.funcMap)
+	if strings.Contains(t.Src, "*") {
+		tmpl, err = tmpl.ParseGlob(t.Src)
+	} else {
+		tmpl, err = tmpl.ParseFiles(t.Src)
+	}
 	if err != nil {
 		return fmt.Errorf("Unable to process template %s, %s", t.Src, err)
 	}

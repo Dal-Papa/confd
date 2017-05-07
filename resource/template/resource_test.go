@@ -7,8 +7,8 @@ import (
 	"testing"
 	"text/template"
 
-	"github.com/bacongobbler/confd/backends/env"
-	"github.com/bacongobbler/confd/log"
+	"github.com/Dal-Papa/confd/backends/env"
+	"github.com/Dal-Papa/confd/log"
 )
 
 // createTempDirs is a helper function which creates temporary directories
